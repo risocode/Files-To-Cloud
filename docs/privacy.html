@@ -3,246 +3,398 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍 | Privacy Policy</title>
-
+<title>Files ➪ Cloud | Privacy Policy</title>
 <link rel="icon" type="image/png" href="logo.png">
 
 <style>
 :root{
-    --bg:#071325;
-    --card:#0b1f3b;
-    --card2:#0d2748;
-    --accent:#00d4ff;
-    --accent2:#4de0ff;
-    --text:#ffffff;
-    --muted:#b6c4d6;
+  --bg:#050b16;
+  --card:#091b31;
+  --card2:#0d2746;
+  --line:#12395f;
+  --text:#f4fbff;
+  --muted:#a9bdd4;
+  --cyan:#32e6ff;
+  --blue:#3b8cff;
+  --green:#37f2ad;
+  --violet:#7b61ff;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
 
 body{
-    background:
-        linear-gradient(rgba(4,12,24,.88),rgba(4,12,24,.88)),
-        url('logo.png') center/cover fixed;
-    color:var(--text);
-    font-family:system-ui,sans-serif;
-    line-height:1.7;
+  min-height:100vh;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(50,230,255,.28), transparent 34%),
+    radial-gradient(circle at 90% 20%, rgba(123,97,255,.18), transparent 30%),
+    radial-gradient(circle at 10% 30%, rgba(59,140,255,.16), transparent 28%),
+    linear-gradient(180deg,#071427 0%,#050b16 55%,#030711 100%);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(#ffffff55 1px, transparent 1px),
+    radial-gradient(#32e6ff44 1px, transparent 1px);
+  background-size:46px 46px, 90px 90px;
+  opacity:.12;
+  animation:stars 18s linear infinite;
+}
+
+@keyframes stars{
+  from{transform:translateY(0)}
+  to{transform:translateY(46px)}
 }
 
 .container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+  width:100%;
+  max-width:1080px;
+  margin:auto;
+  padding:24px 18px 46px;
+  position:relative;
+  z-index:2;
 }
 
-.logo{
-    width:180px;
-    height:180px;
-    margin:20px auto;
-    border-radius:32px;
-    overflow:hidden;
-    border:2px solid rgba(255,255,255,.08);
-    box-shadow:
-        0 0 30px rgba(0,212,255,.4),
-        0 0 60px rgba(0,212,255,.15);
+.hero{
+  min-height:92vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px 0;
 }
 
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    animation:float 4s ease-in-out infinite;
+.logo-wrap{
+  position:relative;
+  width:min(88vw,460px);
+  margin-bottom:18px;
+  animation:float 5s ease-in-out infinite;
+}
+
+.logo-wrap:after{
+  content:"";
+  position:absolute;
+  left:15%;
+  right:15%;
+  bottom:4%;
+  height:22px;
+  background:rgba(50,230,255,.35);
+  filter:blur(24px);
+  border-radius:50%;
+}
+
+.logo-wrap img{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 0 28px rgba(50,230,255,.35));
 }
 
 @keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
 }
 
-h1{
-    text-align:center;
-    font-size:2.4rem;
-    margin-bottom:10px;
+.brand{
+  font-size:clamp(42px,11vw,92px);
+  line-height:1;
+  letter-spacing:-.06em;
+  font-weight:900;
+  margin-top:8px;
+}
+
+.brand span{
+  background:linear-gradient(90deg,#fff,var(--cyan));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .subtitle{
-    text-align:center;
-    color:var(--muted);
-    margin-bottom:30px;
-    font-size:1.1rem;
+  color:var(--muted);
+  font-size:clamp(17px,4vw,26px);
+  margin-top:14px;
 }
 
-.badge{
-    display:block;
-    width:fit-content;
-    margin:0 auto 20px;
-    padding:10px 20px;
-    border-radius:999px;
-    background:rgba(0,212,255,.15);
-    border:1px solid rgba(0,212,255,.25);
-    color:var(--accent2);
-    font-weight:700;
+.trust{
+  margin-top:22px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:11px 18px;
+  border:1px solid rgba(50,230,255,.45);
+  border-radius:999px;
+  background:rgba(5,20,38,.65);
+  box-shadow:0 0 30px rgba(50,230,255,.14);
+  color:var(--cyan);
+  font-weight:700;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:20px;
+.intro{
+  max-width:760px;
+  color:#d4e4f6;
+  margin:28px auto 0;
+  font-size:17px;
+}
+
+.down{
+  color:var(--cyan);
+  margin-top:28px;
+  font-size:34px;
+  animation:bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);opacity:.45}
+  50%{transform:translateY(8px);opacity:1}
+}
+
+.nav{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:10px 0 26px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:var(--text);
+  background:linear-gradient(180deg,rgba(13,39,70,.82),rgba(9,27,49,.82));
+  border:1px solid rgba(50,230,255,.18);
+  border-radius:20px;
+  padding:18px;
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(0,0,0,.22);
 }
 
 .card{
-    background:rgba(11,31,59,.92);
-    border:1px solid rgba(255,255,255,.05);
-    border-radius:20px;
-    padding:20px;
+  background:linear-gradient(180deg,rgba(13,39,70,.86),rgba(9,27,49,.9));
+  border:1px solid rgba(50,230,255,.16);
+  border-radius:26px;
+  padding:24px;
+  margin:16px 0;
+  box-shadow:0 18px 46px rgba(0,0,0,.28);
+  backdrop-filter:blur(10px);
 }
 
 .card h2{
-    margin-bottom:12px;
-    color:var(--accent2);
+  color:#9eeeff;
+  margin-bottom:12px;
+  font-size:clamp(24px,5vw,34px);
 }
 
-.card p{
-    color:var(--muted);
+.card p,.card li{
+  color:var(--muted);
+  font-size:16px;
 }
+
+ul{padding-left:22px}
+
+li{margin:8px 0}
 
 .summary{
-    border-left:5px solid #00ffb7;
+  border-left:5px solid var(--green);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
 }
 
 .features{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:15px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
 }
 
-.tag{
-    padding:8px 14px;
-    border-radius:999px;
-    background:rgba(0,212,255,.12);
-    border:1px solid rgba(0,212,255,.18);
+.feature{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:16px;
+  border-radius:20px;
+  background:rgba(5,20,38,.55);
+  border:1px solid rgba(50,230,255,.12);
+}
+
+.icon{
+  width:52px;
+  height:52px;
+  min-width:52px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  background:rgba(50,230,255,.12);
+  box-shadow:inset 0 0 0 1px rgba(50,230,255,.2);
+}
+
+.commit{
+  display:grid;
+  gap:16px;
+}
+
+.checks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+
+.check{
+  color:#bfffe8;
+  border:1px solid rgba(55,242,173,.25);
+  background:rgba(55,242,173,.1);
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:700;
 }
 
 .footer{
-    text-align:center;
-    margin-top:40px;
-    padding:20px;
-    color:var(--muted);
-    font-size:.9rem;
+  text-align:center;
+  color:var(--muted);
+  padding:32px 0 0;
+}
+
+@media(min-width:760px){
+  .nav{grid-template-columns:repeat(4,1fr)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(3,1fr)}
+  .commit{grid-template-columns:280px 1fr;align-items:center}
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-<div class="logo">
-    <img src="logo.png" alt="Files To Cloud">
+<section class="hero">
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Files To Cloud Logo">
+  </div>
+
+  <h1 class="brand"><span>Files ➪ Cloud</span></h1>
+  <p class="subtitle">Private Telegram Cloud Storage</p>
+
+  <div class="trust">🛡 Secure • 🔒 Private • ⚡ Fast • ☁️ Always with you</div>
+
+  <p class="intro">
+    Files ➪ Cloud is a Telegram-powered cloud storage bot that helps users upload,
+    organize, search, favorite, and retrieve files directly from Telegram.
+  </p>
+
+  <div class="down">⌄</div>
+</section>
+
+<nav class="nav">
+  <a href="#privacy">🔒 Privacy</a>
+  <a href="#data">📁 Data Usage</a>
+  <a href="#storage">☁️ Storage</a>
+  <a href="#contact">💬 Contact</a>
+</nav>
+
+<section class="card summary">
+  <h2>✅ Privacy Summary</h2>
+  <p>
+    We only store the information needed to operate the bot: Telegram account identifiers,
+    file metadata, folder structure, favorites, tags, and storage references. We do not sell user data.
+  </p>
+</section>
+
+<section class="grid">
+  <div id="privacy" class="card">
+    <h2>🔒 Privacy</h2>
+    <p>
+      Your privacy is treated as a core part of the service. Files ➪ Cloud does not collect passwords,
+      payment information, or private Telegram conversations.
+    </p>
+  </div>
+
+  <div id="data" class="card">
+    <h2>📁 Data Usage</h2>
+    <ul>
+      <li>Telegram User ID, username, and display name</li>
+      <li>Uploaded file names and metadata</li>
+      <li>Folder names, tags, favorites, and search information</li>
+      <li>Storage references needed to retrieve files</li>
+    </ul>
+  </div>
+
+  <div id="storage" class="card">
+    <h2>☁️ Storage</h2>
+    <p>
+      Files uploaded through the bot may be archived using private Telegram storage channels
+      and referenced in the bot database for search and retrieval.
+    </p>
+  </div>
+
+  <div id="contact" class="card">
+    <h2>💬 Contact</h2>
+    <p>
+      Telegram Bot: <b>@filestocloud_bot</b><br>
+      GitHub: <b>@risocode</b><br>
+      Email: <b>risoca.code@gmail.com</b>
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>✨ Features</h2>
+  <div class="features">
+    <div class="feature"><div class="icon">📦</div><div><b>Batch Uploads</b><p>Upload multiple files at once.</p></div></div>
+    <div class="feature"><div class="icon">📁</div><div><b>Folders</b><p>Organize uploads into folders.</p></div></div>
+    <div class="feature"><div class="icon">🔍</div><div><b>Search</b><p>Find files quickly by name or metadata.</p></div></div>
+    <div class="feature"><div class="icon">⭐</div><div><b>Favorites</b><p>Save important files for fast access.</p></div></div>
+    <div class="feature"><div class="icon">☁️</div><div><b>Cloud Archive</b><p>Use Telegram-powered file storage.</p></div></div>
+    <div class="feature"><div class="icon">📱</div><div><b>Mobile First</b><p>Designed for smooth mobile viewing.</p></div></div>
+  </div>
+</section>
+
+<section class="card commit">
+  <div class="icon" style="width:120px;height:120px;font-size:64px;">🛡</div>
+  <div>
+    <h2>Privacy Commitment</h2>
+    <p>
+      Files ➪ Cloud is built to keep users in control of their files.
+      Uploaded content remains the user's responsibility and is managed through authorized bot functions.
+    </p>
+    <div class="checks">
+      <span class="check">✅ No data selling</span>
+      <span class="check">✅ Private access</span>
+      <span class="check">✅ User controlled</span>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>📜 User Guidelines</h2>
+  <ul>
+    <li>Do not upload illegal, harmful, or abusive content.</li>
+    <li>Do not upload malware, spyware, or dangerous files.</li>
+    <li>Do not upload copyrighted material unless you have rights to store it.</li>
+    <li>Do not attempt to abuse, overload, or attack the service.</li>
+  </ul>
+</section>
+
+<footer class="footer">
+  <b>Files ➪ Cloud</b><br>
+  Version 1.0 • Last Updated: June 2026<br>
+  Powered by Telegram Cloud Storage
+</footer>
+
 </div>
-
-<span class="badge">
-☁️ Secure Telegram Cloud Storage
-</span>
-
-<h1>𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍</h1>
-
-<p class="subtitle">
-Privacy Policy, Data Usage, Service Information, and User Guidelines
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h2>🔒 Privacy</h2>
-<p>
-Files ➪ Cloud respects your privacy.
-User information is used solely to provide cloud storage features,
-file organization, search, favorites, and account functionality.
-</p>
-</div>
-
-<div class="card">
-<h2>📂 Data Usage</h2>
-<p>
-Uploaded files and metadata may be stored through Telegram
-and related storage systems required for bot functionality.
-Data is never sold to third parties.
-</p>
-</div>
-
-<div class="card">
-<h2>☁️ Storage</h2>
-<p>
-Files are stored for retrieval through the bot.
-Users remain responsible for the content they upload and manage.
-</p>
-</div>
-
-<div class="card">
-<h2>📞 Contact</h2>
-<p>
-Telegram Bot: @filestocloud_bot<br>
-GitHub: @risocode
-</p>
-</div>
-
-</div>
-
-<div class="card summary">
-
-<h2>✅ Summary</h2>
-
-<p>
-Files ➪ Cloud is a Telegram-powered cloud storage service that allows
-users to upload, organize, search, favorite, and retrieve files directly
-through Telegram.
-</p>
-
-<div class="features">
-<span class="tag">📦 Batch Uploads</span>
-<span class="tag">📁 Folder Organization</span>
-<span class="tag">🔍 Search</span>
-<span class="tag">⭐ Favorites</span>
-<span class="tag">☁️ Cloud Archive</span>
-<span class="tag">📱 Mobile Friendly</span>
-<span class="tag">🔒 Private</span>
-</div>
-
-</div>
-
-<div class="card" style="margin-top:20px;">
-
-<h2>📜 Terms of Use</h2>
-
-<p>
-By using Files ➪ Cloud, you agree to use the service responsibly and
-legally. Uploading unlawful, harmful, or infringing content is prohibited.
-Users remain fully responsible for all files they upload, store, or share.
-</p>
-
-</div>
-
-<div class="footer">
-
-<b>𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍</b><br>
-
-Version 1.0<br>
-Last Updated: June 2026<br><br>
-
-Powered by Telegram Cloud Storage
-
-</div>
-
-</div>
-
 </body>
 </html>
