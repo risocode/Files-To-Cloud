@@ -1,178 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Files ➪ Cloud | Privacy Policy</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍 | Privacy & Terms</title>
 
 <style>
 :root{
---bg:#081120;
---card:#0f1d33;
---accent:#4da3ff;
---accent2:#7b61ff;
---text:#ffffff;
---muted:#b8c2d1;
---border:#223654;
+  --bg:#07111f;
+  --bg2:#0b1d33;
+  --card:#10243d;
+  --card2:#0d1b2f;
+  --text:#eef7ff;
+  --muted:#a9bbcf;
+  --blue:#4db8ff;
+  --cyan:#52f0ff;
+  --violet:#8b6cff;
+  --green:#48e6a0;
+  --border:#214061;
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,Segoe UI,sans-serif;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#081120,#0d1a2f,#081120);
-color:var(--text);
-line-height:1.7;
-padding:20px;
+  min-height:100vh;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(77,184,255,.22), transparent 32%),
+    radial-gradient(circle at top right, rgba(139,108,255,.18), transparent 28%),
+    linear-gradient(135deg,var(--bg),var(--bg2),#050914);
+  line-height:1.7;
+  padding:18px;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(#ffffff55 1px, transparent 1px),
+    radial-gradient(#52f0ff44 1px, transparent 1px);
+  background-size:42px 42px, 80px 80px;
+  opacity:.18;
 }
 
 .container{
-max-width:900px;
-margin:auto;
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
 }
 
 .hero{
-text-align:center;
-padding:40px 20px;
+  padding:34px 18px 24px;
+  text-align:center;
 }
 
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.hero p{
-color:var(--muted);
-}
-
-.card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:20px;
-padding:25px;
-margin-bottom:20px;
-}
-
-h2{
-margin-bottom:12px;
-color:#8ec5ff;
-}
-
-ul{
-padding-left:20px;
-}
-
-.footer{
-text-align:center;
-padding:40px 0;
-color:var(--muted);
-font-size:14px;
+.logo{
+  width:88px;
+  height:88px;
+  margin:0 auto 16px;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  background:linear-gradient(135deg,var(--blue),var(--violet));
+  box-shadow:0 0 40px rgba(77,184,255,.35);
 }
 
 .badge{
-display:inline-block;
-padding:8px 14px;
-background:linear-gradient(90deg,var(--accent),var(--accent2));
-border-radius:999px;
-margin-bottom:15px;
-font-weight:700;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 14px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:rgba(16,36,61,.72);
+  color:var(--cyan);
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+h1{
+  font-size:clamp(30px,7vw,54px);
+  line-height:1.1;
+  margin-bottom:12px;
+  letter-spacing:-.04em;
+}
+
+.subtitle{
+  color:var(--muted);
+  max-width:720px;
+  margin:0 auto;
+  font-size:16px;
+}
+
+.nav{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:18px 0;
+}
+
+.nav a{
+  text-decoration:none;
+  color:var(--text);
+  background:rgba(16,36,61,.82);
+  border:1px solid var(--border);
+  padding:13px 14px;
+  border-radius:16px;
+  font-weight:700;
+}
+
+.card{
+  background:linear-gradient(180deg,rgba(16,36,61,.96),rgba(13,27,47,.96));
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:22px;
+  margin:14px 0;
+  box-shadow:0 16px 42px rgba(0,0,0,.25);
+}
+
+.card h2{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#9bd8ff;
+}
+
+.card p{
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+ul{
+  padding-left:20px;
+  color:var(--muted);
+}
+
+li{
+  margin:7px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+.notice{
+  border-left:4px solid var(--green);
+}
+
+.footer{
+  color:var(--muted);
+  text-align:center;
+  padding:34px 10px;
+  font-size:14px;
+}
+
+.pill{
+  display:inline-block;
+  background:rgba(82,240,255,.12);
+  color:#aef8ff;
+  border:1px solid rgba(82,240,255,.25);
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:13px;
+  margin:4px 4px 0 0;
+}
+
+@media(min-width:760px){
+  .nav{
+    grid-template-columns:repeat(4,1fr);
+  }
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .card{
+    padding:28px;
+  }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-<div class="hero">
-<div class="badge">☁️ Files ➪ Cloud</div>
-<h1>Privacy Policy</h1>
-<p>Last Updated: June 2026</p>
-</div>
+<header class="hero">
+  <div class="logo">☁️</div>
+  <div class="badge">📁 Private Telegram Cloud Storage</div>
+  <h1>𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍</h1>
+  <p class="subtitle">
+    Privacy Policy, Terms of Use, and service information for the Telegram file-storage bot.
+  </p>
+</header>
 
-<div class="card">
-<h2>📌 Overview</h2>
-<p>
-Files ➪ Cloud is a Telegram-based file storage and management service.
-Your privacy and data security are important to us.
-</p>
-</div>
+<nav class="nav">
+  <a href="#privacy">🔒 Privacy</a>
+  <a href="#data">📂 Data</a>
+  <a href="#terms">📜 Terms</a>
+  <a href="#contact">📞 Contact</a>
+</nav>
 
-<div class="card">
-<h2>📂 Information We Collect</h2>
-<ul>
-<li>Telegram User ID</li>
-<li>Telegram Username</li>
-<li>Display Name</li>
-<li>Uploaded Files</li>
-<li>Folder Information</li>
-<li>Storage Usage Statistics</li>
-<li>Favorite and Search Preferences</li>
-</ul>
-</div>
+<section class="card notice">
+  <h2>✅ Summary</h2>
+  <p>
+    𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍 helps users upload, organize, search, and retrieve files through Telegram.
+    By using the bot, you agree to this Privacy Policy and Terms of Use.
+  </p>
+  <span class="pill">Batch Uploads</span>
+  <span class="pill">Smart Folders</span>
+  <span class="pill">Search</span>
+  <span class="pill">Favorites</span>
+  <span class="pill">Telegram Cloud Archive</span>
+</section>
 
-<div class="card">
-<h2>🔒 How We Use Data</h2>
-<ul>
-<li>Provide file storage services</li>
-<li>Organize folders and uploads</li>
-<li>Maintain account statistics</li>
-<li>Improve service quality</li>
-<li>Prevent abuse and unauthorized access</li>
-</ul>
-</div>
+<section id="privacy" class="card">
+  <h2>🔒 Privacy Policy</h2>
+  <p>
+    We respect user privacy. The bot only stores information needed to provide file storage,
+    organization, search, retrieval, and account-level file management.
+  </p>
+  <p>
+    We do not sell user data. We do not collect passwords, payment data, or private Telegram conversations.
+  </p>
+</section>
 
-<div class="card">
-<h2>☁️ File Storage</h2>
-<p>
-Files uploaded through the bot may be stored inside Telegram channels,
-Telegram cloud infrastructure, or supporting storage systems required
-for operation of the service.
-</p>
-</div>
+<section id="data" class="grid">
+  <div class="card">
+    <h2>📂 Information We May Store</h2>
+    <ul>
+      <li>Telegram User ID</li>
+      <li>Telegram username and display name</li>
+      <li>Uploaded file metadata</li>
+      <li>Original and stored file names</li>
+      <li>Folder names and folder structure</li>
+      <li>File category, size, upload date, tags, and favorites</li>
+      <li>Archive channel message references used for retrieval</li>
+    </ul>
+  </div>
 
-<div class="card">
-<h2>🚫 Data Sharing</h2>
-<p>
-We do not sell, rent, or intentionally share personal data with third parties.
-Files remain accessible only through authorized access methods provided by the service.
-</p>
-</div>
+  <div class="card">
+    <h2>☁️ How Files Are Stored</h2>
+    <p>
+      Files uploaded through the bot may be copied to private Telegram archive channels
+      and referenced in the bot database so users can search and download their own files later.
+    </p>
+    <p>
+      Telegram infrastructure may process and store uploaded media according to Telegram's own policies.
+    </p>
+  </div>
+</section>
 
-<div class="card">
-<h2>🛡 Security</h2>
-<p>
-Reasonable measures are implemented to protect stored files and user information.
-However, no internet-based service can guarantee absolute security.
-</p>
-</div>
+<section class="grid">
+  <div class="card">
+    <h2>🛠 How Data Is Used</h2>
+    <ul>
+      <li>To save and organize uploaded files</li>
+      <li>To support search, folders, favorites, and recent files</li>
+      <li>To display storage usage and file counts</li>
+      <li>To prevent abuse and protect user access</li>
+      <li>To troubleshoot service errors and reliability issues</li>
+    </ul>
+  </div>
 
-<div class="card">
-<h2>🗑 Data Removal</h2>
-<p>
-Users may delete files and folders using the available bot functions.
-Deleted content may be removed permanently according to operational requirements.
-</p>
-</div>
+  <div class="card">
+    <h2>🗑 Data Deletion</h2>
+    <p>
+      Users may delete files using available bot controls. Deleted file records may be removed or marked
+      deleted in the system database depending on service operations.
+    </p>
+    <p>
+      For full account or data deletion requests, contact the administrator.
+    </p>
+  </div>
+</section>
 
-<div class="card">
-<h2>📞 Contact</h2>
-<p>
-Developer: RiSoCa<br>
-GitHub: https://github.com/risocode<br>
-Email: risoca.code@gmail.com
-</p>
-</div>
+<section id="terms" class="card">
+  <h2>📜 Terms of Use</h2>
+  <p>
+    By using 𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍, you agree that you are responsible for files uploaded through your account.
+  </p>
+  <ul>
+    <li>You must not upload illegal content.</li>
+    <li>You must not upload malware, spyware, or harmful software.</li>
+    <li>You must not upload copyrighted material unless you have the right to store it.</li>
+    <li>You must not abuse, attack, overload, or attempt unauthorized access to the service.</li>
+    <li>The service may restrict or remove access for abuse or violations.</li>
+  </ul>
+</section>
 
-<div class="footer">
-© 2026 Files ➪ Cloud • All Rights Reserved
-</div>
+<section class="grid">
+  <div class="card">
+    <h2>📌 File Ownership</h2>
+    <p>
+      Users retain responsibility for their uploaded files. The service only provides storage,
+      organization, and retrieval functionality through Telegram.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Availability</h2>
+    <p>
+      The service is provided as available. Uptime, storage availability, and uninterrupted access
+      are not guaranteed. Features and limits may change over time.
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="card">
+  <h2>📞 Contact</h2>
+  <p><strong>Developer:</strong> RiSoCa</p>
+  <p><strong>GitHub:</strong> https://github.com/risocode</p>
+  <p><strong>Email:</strong> risoca.code@gmail.com</p>
+</section>
+
+<footer class="footer">
+  © 2026 𝙵𝚒𝚕𝚎𝚜 ➪ 𝙲𝚕𝚘𝚞𝚍. All rights reserved.
+</footer>
 
 </div>
-
 </body>
 </html>
